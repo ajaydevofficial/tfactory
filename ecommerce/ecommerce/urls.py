@@ -15,7 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import home_page,login_page,register_page,
+from .views import home_page,login_page,register_page,soon_page,talent_page,technical_page,clothes_page,design_order_page
+from .views import privacy_page,return_page,project_order_page,portrait_order_page,kurta_store_page,web_order_page,terms_page
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',home_page,name="Home_Page"),
+    path('home/',home_page,name="Home_Page"),
+    path('login/',login_page,name="Login_Page"),
+    path('register/',register_page,name="Register_Page"),
+    path('soon/',soon_page,name="Soon_Page"),
+    path('talent/',talent_page,name="Talent_Page"),
+    path('technical/',technical_page,name="Technical_Page"),
+    path('clothes/',clothes_page,name="Clothes_Page"),
+    path('design/',design_order_page,name="Design_Order_Page"),
+    path('privacy/',privacy_page,name="Privacy_Page"),
+    path('return/',return_page,name="Return_Page"),
+    path('project/',project_order_page,name="Project_Order_Page"),
+    path('portrait/',portrait_order_page,name="Portrait_Order_Page"),
+    path('kurta/',kurta_store_page,name="Kurta_Store_Page"),
+    path('web/',web_order_page,name="Web_Order_Page"),
+    path('terms/',terms_page,name="Terms_Page"),
+
 ]

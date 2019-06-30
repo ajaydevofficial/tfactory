@@ -1,27 +1,86 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    {% load static %}
     <meta charset="utf-8">
     <title>T Factory</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/master-responsive.css">
-    <link rel="stylesheet" href="css/slider.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/slider.js"></script>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <link rel="stylesheet" href="{% static 'css/master-responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tooltip.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/slider.js' %}"></script>
   </head>
   <body>
     <div class="header-section">
       <div class="container">
         <div class="header-inner-section">
           <div class="header-content">
-            <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            <a href="{% url 'Home_Page' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
           </div>
           <div class="right-header">
-            <a href="login.html">Login</a>
-            <a href="cart.html">Account</a>
+            <a id="popup" data-toggle="modal" data-target="#myModal">Category</a>
+            <div id="myModal" class="modal gradient-box" role="dialog" >
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <h4>Technical Factory</h4>
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Project_Order_Page' %}">Projects</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">UI/UX</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Web_Order_Page' %}">Websites</a>
+                      </div>
+                    </div>
+                    <h4>Togs Factory</h4>
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Plain Tshirts</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Kurta_Store_Page' %}">Kurtas</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Custom Tshirts</a>
+                      </div>
+                    </div>
+                    <h4>Talent Factory</h4>
+                    <div class="row custom-row">
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Logo</a>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <a href="{% url 'Login_Page' %}">Login</a>
+            <a href="{% url 'Account_Page' %}">Account</a>
           </div>
         </div>
       </div>
@@ -65,10 +124,10 @@
           </ul>
           <ul id="policy">
             <h4>Policy</h4>
-            <li><a href="return.html">Return Policy</a><li>
-            <li><a href="terms_conditions.html">Terms & Conditions</a><li>
+            <li><a href="{% url 'Return_Page' %}">Return Policy</a><li>
+            <li><a href="{% url 'Terms_Page' %}">Terms & Conditions</a><li>
             <li><a href="#">Security</a><li>
-            <li><a href="privacy.html">Privacy</a><li>
+            <li><a href="{% url 'Privacy_Page' %}">Privacy</a><li>
           </ul>
           <ul id="social">
             <h4>Social</h4>
