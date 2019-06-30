@@ -1,0 +1,67 @@
+#red{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border: none;
+}
+#green{
+  width: 30px;
+  height: 30px;
+  background-color: green;
+  border: none;
+}
+#blue{
+  width: 30px;
+  height: 30px;
+  background-color: blue;
+  border: none;
+}
+#black{
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border: none;
+}
+#white{
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: none;
+}
+
+#flourescent{
+  width: 30px;
+  height: 30px;
+  background-color: #546744;
+  border: none;
+}
+#maroon{
+  width: 30px;
+  height: 30px;
+  background-color: #065032;
+  border: none;
+}
+#darkgreen{
+  width: 30px;
+  height: 30px;
+  background-color: #A43611;
+  border: none;
+}
+#navyblue{
+  width: 30px;
+  height: 30px;
+  background-color: #F5631A;
+  border: none;
+}
+.color-group .container{
+  margin-top: 0;
+}
+.color-group .col-xs-1 {
+    margin: 5px;
+    margin-left: 0;
+}
+.color-value{
+  border-radius: 50px;
+  padding: 4px 6.5px;
+  color: white;
+}

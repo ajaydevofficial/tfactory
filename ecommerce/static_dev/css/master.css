@@ -1,0 +1,364 @@
+@font-face {
+    font-family: Medio;
+    src: url('../fonts/medio.ttf');
+}
+@font-face {
+    font-family: Coves-Bold;
+    src: url('../fonts/Coves-Bold.otf');
+}
+@font-face {
+    font-family: Coves-Light;
+    src: url('../fonts/Coves-Light.otf');
+}
+body{
+  margin:0;
+  font-family: Coves-Light !important;
+  background-color: #f0f6f7;
+  font-size: 18px;
+  scroll-behavior: smooth;
+
+
+}
+h1,h2,h3,h4,h5,h6,button,input,a{
+  font-family: Coves-Bold;
+}
+.header-content{
+  margin: auto 10px;
+}
+.header-content img{
+  width:160px;
+}
+.right-header{
+  width:100%;
+    text-align: right;
+}
+.right-header img{
+  width:30px;
+}
+.right-header a{
+  margin: 0 20px;
+}
+
+.header-section{
+  background-color: #0a0a0a;
+  background-image: url("../images/header.png");
+  width: 100%;
+  height: 75px;
+  box-shadow: 0px 1px 5px black;
+  z-index: 1001;
+  display:flex;
+  position: relative;
+  font-family: Montserrat;
+
+}
+.header-inner-section{
+  display: flex;
+  width: 100%;
+}
+.category-select{
+  background: none;
+  border: none;
+  color:#ffd36f;
+  width: auto;
+  margin:auto 5px;
+}
+.right-header{
+    margin: auto 5px;
+}
+.right-header a{
+    background-image: -webkit-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For Chrome and Safari */
+    background-image:    -moz-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For old Fx (3.6 to 15) */
+    background-image:     -ms-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For pre-releases of IE 10*/
+    background-image:      -o-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For old Opera (11.1 to 12.0) */
+    background-image:         linear-gradient(to bottom,  #ddaf47, #ffd36f, #91682f); /* Standard syntax; must be last */
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-decoration: none !important;
+    font-size: 20px;
+}
+#myCarousel{
+  z-index: -1;
+}
+.container{
+  margin-top: 20px;
+}
+.btn-primary{
+  background-color: #202020;
+  border-color:#020202;
+  background-image: url("../images/header.png");
+  margin-bottom: 20px;
+}
+.card-header{
+  padding: 4px 0;
+  background-color: #202020;
+  border-color:#020202;
+  border-radius: 5px 5px 0 0;
+  background-image: url("../images/header.png");
+}
+.btn-primary span,.card-header h2{
+
+  background-image: -webkit-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For Chrome and Safari */
+  background-image:    -moz-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For old Fx (3.6 to 15) */
+  background-image:     -ms-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For pre-releases of IE 10*/
+  background-image:      -o-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For old Opera (11.1 to 12.0) */
+  background-image:         linear-gradient(to bottom,  #ddaf47, #ffd36f, #91682f); /* Standard syntax; must be last */
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-decoration: none !important;
+  font-size: 20px;
+
+}
+.card-text{
+    margin: 10px;
+}
+.card{
+  border: 1px solid grey;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 20px;
+}
+.service-section h1{
+  margin-top:0;
+}
+.service-section p{
+  font-size: 18px;
+}
+.service-section{
+  margin-bottom: 20px;
+}
+.counter-section .row{
+  margin-top: 30px;
+  justify-content: space-between;
+  display: flex;
+  text-align: center;
+}
+.counter-section .card{
+  background-image: url("../images/header.png");
+  border-radius: 5px;
+}
+.counter-section .card h2{
+  background-image: -webkit-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For Chrome and Safari */
+  background-image:    -moz-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For old Fx (3.6 to 15) */
+  background-image:     -ms-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For pre-releases of IE 10*/
+  background-image:      -o-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For old Opera (11.1 to 12.0) */
+  background-image:         linear-gradient(to bottom,  #ddaf47, #ffd36f, #91682f); /* Standard syntax; must be last */
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-decoration: none !important;
+}
+.about-section{
+  margin-bottom: 20px;
+}
+.custom-container{
+  display: flex;
+  justify-content: space-between;
+  background-image: -webkit-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For Chrome and Safari */
+  background-image:    -moz-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For old Fx (3.6 to 15) */
+  background-image:     -ms-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For pre-releases of IE 10*/
+  background-image:      -o-linear-gradient(bottom, #ddaf47, #ffd36f, #91682f); /* For old Opera (11.1 to 12.0) */
+  background-image:         linear-gradient(to bottom,  #ddaf47, #ffd36f, #91682f); /* Standard syntax; must be last */
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-decoration: none !important;
+}
+.width-60{
+    width: 60%;
+}
+.width-40{
+    width: 40%;
+}
+.footer-section{
+  background-image: url("../images/header.png");
+  padding: 20px 0;
+}
+.footer-section .container{
+  display: flex;
+  justify-content: space-between;
+}
+ul{
+  list-style-type: none;
+  margin-right: 20px;
+}
+#left-footer{
+  border-right: 0.5px solid white;
+}
+.footer-section a{
+    color: white;
+    font-family: Coves-Light;
+    font-size: 15px;
+}
+#footer{
+  padding: 15px 0;
+  text-align: center;
+  background-color: black;
+}
+#footer p{
+  color: white;
+  margin-bottom: 0;
+  font-size: 15px;
+}
+.explore-section .row ,.counter-section .row{
+  margin: 30px 0;
+}
+.associates-section h1{
+  margin-bottom: 30px;
+}
+.associates-section{
+  margin-bottom: 30px;
+}
+.associates-section img{
+    width: 200px;
+}
+.terms-section ol li{
+  margin-top: 5px;
+}
+.inner-list li{
+  list-style-type: lower-alpha;
+}
+.card-img-top{
+  width: 250px;
+}
+.clothes-section .card{
+  border: none !important;
+}
+.clothes-section a,.login-section button,.signup-section button{
+    background-color: #F8E189 !important;
+    background-image:none;
+    border: none;
+    color: black;
+}
+.clothes-section{
+  margin-top: 40px;
+}
+.project-section .container,.login-section .container{
+  margin-top: 0;
+}
+.project-form{
+  margin-top: 50px;
+}
+.project-form *{
+  margin-top: 10px;
+}
+.required{
+  color: #DC143C;
+}
+.login-section{
+  min-height: 75vh;
+  display: flex;
+}
+.custom-login-container{
+  width: 300px;
+  margin: auto;
+}
+.login-section form{
+  margin: 0 10px;
+}
+.login-section form h1,.signup-section form h1{
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding: 20px;
+}
+.login-section .form-flex,.signup-section .form-flex{
+    display: flex;
+    justify-content: space-between;
+}
+#fname{
+  margin-right: 10px;
+}
+.color-group .form-group{
+  width: 300px;
+}
+.color-group .w-100 label{
+  width: 100px;
+}
+.color-group .w-100 input{
+  width: 80px;
+}
+.color-group .container{
+    width: 400px !important;
+}
+.image-group img{
+  width: 500px
+}
+.flexbox{
+  display: flex;
+}
+#purchaseamount{
+  color: black;
+}
+.buy{
+   background-color: #F8E189 !important;
+   background-image: none;
+   border: none;
+   color:black;
+   font-size: 20px;
+}
+.buy:hover{
+  color: black;
+}
+.buy:active{
+  color: black;
+}
+.kurta-section .container{
+  margin-top: 0;
+}
+.address-area input{
+  margin-top: 20px;
+}
+.col-1,.col-2,.col-3{
+  padding-right: 5px;
+}
+.modal-backdrop.in {
+    opacity: .5;
+    /*display: none !important;*/
+    z-index: 0;
+}
+.modal-open .modal {
+    display: flex;
+
+}
+.modal.in .modal-dialog {
+  margin: auto;
+  font-family:Coves-Bold;
+}
+
+.modal-header {
+    padding: 15px;
+    border-bottom:none !important;
+    text-align: center;
+}
+.modal-footer {
+    padding: 15px;
+    text-align: center !important;
+    border-top:none !important;
+}
+.modal-body{
+  text-align: center;
+}
+.btn-warning {
+    color: #fff !important;
+    background-color: rgb(255,210,96) !important;
+    border-color: rgb(255,210,96)  !important;
+    background-image: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    font-size: 15px !important;
+    margin: 10px 0px !important;
+    width: 110px;
+}
+.close,#popup{
+  cursor: pointer;
+}
+.col-xs-3 .btn-warning {
+  width: 90px;
+}
+.custom-row{
+  margin: 0px 6px;
+}
+.close{
+  font-size: 35px;
+}

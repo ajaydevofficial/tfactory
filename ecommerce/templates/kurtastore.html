@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>T Factory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/master-responsive.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/colorpicker.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/kurtaorder.js"></script>
+  </head>
+  <body>
+    <div class="header-section">
+      <div class="container">
+        <div class="header-inner-section">
+          <div class="header-content">
+            <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+          </div>
+          <div class="right-header">
+            <a href="login.html">Login</a>
+            <a href="cart.html">Account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="kurta-section">
+      <div class="container">
+        <form class="kurta-form" method="post">
+          <h1>Place Order</h1>
+          <p>Orders will be delivered within 14 working days</p>
+          <div class="flexbox">
+            <div class="image-group">
+              <img src="images/satinredkurta.png" alt="">
+            </div>
+            <div class="color-group form-group">
+              <label for="color"> <h4>Color ( Select only one color )</h4> </label>
+              <div class="row container">
+                <button type="button" class="col-xs-1 color-value" id="red"></button>
+                <button type="button" class="col-xs-1 color-value" id="blue"></button>
+                <button type="button" class="col-xs-1 color-value" id="green"></button>
+                <button type="button" class="col-xs-1 color-value" id="maroon"></button>
+                <button type="button" class="col-xs-1 color-value" id="black"></button>
+                <button type="button" class="col-xs-1 color-value" id="white"></button>
+                <button type="button" class="col-xs-1 color-value" id="flourescent"></button>
+                <button type="button" class="col-xs-1 color-value" id="darkgreen"></button>
+                <button type="button" class="col-xs-1 color-value" id="navyblue"></button>
+              </div><br>
+              <label for="size"> <h4>Size (Enter number of each size)</h4> </label>
+              <div class="form-group w-100">
+                <small><label for="small">Small</label></small>
+                <input class="form-control size-value"type="number" name="small" value="0">
+              </div>
+              <div class="form-group w-100">
+                <small><label for="medium">Medium</label></small>
+                <input class="form-control size-value"type="number" name="medium" value="0">
+              </div>
+              <div class="form-group w-100">
+                <small><label for="large">Large</label></small>
+                <input class="form-control size-value"type="number" name="large" value="0">
+              </div>
+              <div class="form-group w-100">
+                <small><label for="x-large">X-Large</label></small>
+                <input class="form-control size-value" type="number" name="xlarge" value="0">
+              </div>
+              <div class="form-group w-100">
+                <small><label for="xxlarge">XX-Large</label></small>
+                <input class="form-control size-value"type="number" name="xxlarge" value="0">
+              </div>
+              <div class="form-group w-100">
+                <label for="total">Total</label>
+                <input class="form-control size-total-value" type="number" name="total" value=0 disabled>
+              </div><br>
+              <div class="form-group address-area">
+                <h4>Address (For Speedpost Delivery)</h4>
+                <input  class="form-control"type="text" name="address1" placeholder="Address Line 1">
+                <input class="form-control"type="text" name="address2" placeholder="Address Line 2">
+                <input class="form-control"type="text" name="city" placeholder="City">
+                <input class="form-control"type="text" name="state" placeholder="State">
+                <input class="form-control"type="number" name="pincode" placeholder="Pincode">
+              </div><br>
+              <div class="form-group address-area">
+                <h4>Contact (For Confirmation)</h4>
+                <input class="form-control"type="text" name="address1" placeholder="email">
+                <input class="form-control"type="text" name="address2" placeholder="phone">
+              </div>
+              <div class="form-group">
+                <table>
+                  <tr>
+                    <td class="col-1"> <b>Order Total</b> </td>
+                    <td class="col-2"> <b>:</b> </td>
+                    <td class="col-3"> <b><span id="orderno">0</span> x <span>₹230</span></b> </td>
+                  </tr>
+                  <tr>
+                    <td class="col-1"> <b>Delivery</b> </td>
+                    <td class="col-2"> <b> : </b> </td>
+                    <td class="col-3"> <b>₹500</b> </td>
+                  </tr>
+                </table>
+              </div><br>
+              <input id="ordercolor" type="hidden" value="">
+              <input id="purchasetotal" type="hidden" name="ordertotal" value="">
+              <button type="button" type="submit" class="btn buy btn-primary"> Pay ₹<span id="purchaseamount">0</span> </button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <br><br>
+    <footer>
+      <div class="footer-section">
+      <div class="container">
+        <div class="custom-container width-60" id="left-footer">
+          <ul id="help">
+            <h4>Help</h4>
+            <li><a href="#">Payments</a><li>
+            <li><a href="#">F.A.Q</a><li>
+            <li><a href="#">Cancellation & Returns</a><li>
+            <li><a href="#">Report Issues</a><li>
+          </ul>
+          <ul id="policy">
+            <h4>Policy</h4>
+            <li><a href="#">Return Policy</a><li>
+            <li><a href="#">Terms & Conditions</a><li>
+            <li><a href="#">Security</a><li>
+            <li><a href="#">Privacy</a><li>
+          </ul>
+          <ul id="social">
+            <h4>Social</h4>
+            <li><a href="#">Facebook</a><li>
+            <li><a href="#">Instagram</a><li>
+            <li><a href="#">LinkedIn</a><li>
+          </ul>
+        </div>
+        <div class="custom-container width-40">
+          <ul id="contact">
+            <h4>Contact Us</h4>
+            <li><a href="mailto:info@tfactorylive.com">info@tfactorylive.com</a></li>
+            <li><a href="tel:+919567283023">+919567283023</a><li>
+            <li><a href="tel:+919567283023">+919567283023</a><li>
+            <li><a href="tel:+919567283023">+919567283023</a><li>
+          </ul>
+          <ul id="place">
+            <h4>Our Place</h4>
+            <li><a href="#">Kochi,Kerala,India</a><li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      <footer>
+        <div class="footer-section">
+        <div class="container">
+          <div class="custom-container width-60" id="left-footer">
+            <ul id="help">
+              <h4>Help</h4>
+              <li><a href="#">Payments</a><li>
+              <li><a href="#">F.A.Q</a><li>
+              <li><a href="#">Cancellation & Returns</a><li>
+              <li><a href="#">Report Issues</a><li>
+            </ul>
+            <ul id="policy">
+              <h4>Policy</h4>
+              <li><a href="return.html">Return Policy</a><li>
+              <li><a href="terms_conditions.html">Terms & Conditions</a><li>
+              <li><a href="#">Security</a><li>
+              <li><a href="privacy.html">Privacy</a><li>
+            </ul>
+            <ul id="social">
+              <h4>Social</h4>
+              <li><a href="#">Facebook</a><li>
+              <li><a href="#">Instagram</a><li>
+              <li><a href="#">LinkedIn</a><li>
+            </ul>
+          </div>
+          <div class="custom-container width-40">
+            <ul id="contact">
+              <h4>Contact Us</h4>
+              <li><a href="mailto:info@tfactorylive.com">info@tfactorylive.com</a></li>
+              <li><a href="tel:+919567283023">+919567283023</a><li>
+              <li><a href="tel:+919567283023">+919567283023</a><li>
+              <li><a href="tel:+919567283023">+919567283023</a><li>
+            </ul>
+            <ul id="place">
+              <h4>Our Place</h4>
+              <li><a href="https://maps.google.com/?q=Kochi,Kerala,India">Kochi,Kerala,India</a><li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </footer>
+      <footer id="footer"><p>Copyright &copy; 2019 T Factory All Rights Reserved.</p> </footer>
+  </body>
+</html>
