@@ -2,11 +2,13 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import get_user_model,authenticate,login,logout
 
 def login_page(request):
-    context = {}
+    context = {"invalid":False}
     if request.method =='POST':
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(username=username,password=password)
+        if not request.POST.get('remember_me', None):
+            request.session.set_expiry(0)
         if not user==None:
             login(request,user)
             return redirect(home_page)
@@ -71,3 +73,7 @@ def web_order_page(request):
 def terms_page(request):
     context={}
     return render(request,"terms_conditions.html",context)
+
+def account_page(request):
+    context={}
+    return render(request,"account.html",context)

@@ -15,6 +15,77 @@
     <script src="{% static 'js/slider.js' %}"></script>
   </head>
   <body>
+    {% if user.is_authenticated %}
+    <div class="header-section">
+      <div class="container">
+        <div class="header-inner-section">
+          <div class="header-content">
+            <a href="{% url 'Home_Page' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+          </div>
+          <div class="right-header">
+            <a id="popup" data-toggle="modal" data-target="#myModal">Category</a>
+            <div id="myModal" class="modal gradient-box" role="dialog" >
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <h4>Technical Factory</h4>
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Project_Order_Page' %}">Projects</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">UI/UX</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Web_Order_Page' %}">Websites</a>
+                      </div>
+                    </div>
+                    <h4>Togs Factory</h4>
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Plain Tshirts</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Kurta_Store_Page' %}">Kurtas</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Custom Tshirts</a>
+                      </div>
+                    </div>
+                    <h4>Talent Factory</h4>
+                    <div class="row custom-row">
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Logo</a>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <a href="{% url 'Account_Page' %}">{{user.username}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% else %}
     <div class="header-section">
       <div class="container">
         <div class="header-inner-section">
@@ -85,6 +156,7 @@
         </div>
       </div>
     </div>
+    {% endif %}
     <div class="signup-section">
       <div class="custom-login-container">
         <form>
