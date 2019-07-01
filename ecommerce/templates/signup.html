@@ -13,6 +13,7 @@
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/slider.js' %}"></script>
+    <script src="{% static 'js/passwordverify.js' %}"></script>
   </head>
   <body>
     {% if user.is_authenticated %}
@@ -159,7 +160,7 @@
     {% endif %}
     <div class="signup-section">
       <div class="custom-login-container">
-        <form>
+        <form method="post">{% csrf_token %}
           <h1>Sign Up</h1>
           <div class="form-group form-flex" >
             <div class="form-flexbox" id="fname">
@@ -185,11 +186,11 @@
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input required name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input required name="password" type="password" class="form-control" id="passwordinput" placeholder="Password">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Re-enter Password</label>
-            <input required name="repassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Re-enter Password">
+            <input required name="repassword" type="password" class="form-control" id="verifypasswordinput" placeholder="Re-enter Password">
           </div>
           <div class="form-check">
             <div class="form-flex">
@@ -197,7 +198,7 @@
             </div>
           </div>
           <br>
-          <button type="submit" class="btn btn-primary">Sign Up</button>
+          <button id="signupbutton" disabled type="submit" class="btn btn-primary">Sign Up</button>
         </form>
       </div>
     </div>
