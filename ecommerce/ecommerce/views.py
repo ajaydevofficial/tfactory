@@ -3,19 +3,22 @@ from django.contrib.auth import get_user_model,authenticate,login,logout
 
 def login_page(request):
     context = {"invalid":False}
-    if request.method =='POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(username=username,password=password)
-        if not request.POST.get('remember_me', None):
-            request.session.set_expiry(0)
-        if not user==None:
-            login(request,user)
-            return redirect(home_page)
-        else:
-            print("Login Failed")
-            return render(request,"login.html",{"invalid":True})
-    return render(request,"login.html",context)
+    if request.user.is_authenticated:
+        return redirect(home_page)
+    else:
+        if request.method =='POST':
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(username=username,password=password)
+            if not request.POST.get('remember_me', None):
+                request.session.set_expiry(0)
+            if not user==None:
+                login(request,user)
+                return redirect(home_page)
+            else:
+                print("Login Failed")
+                return render(request,"login.html",{"invalid":True})
+        return render(request,"login.html",context)
 
 def home_page(request):
     context={}
@@ -76,4 +79,11 @@ def terms_page(request):
 
 def account_page(request):
     context={}
-    return render(request,"account.html",context)
+    if request.user.is_authenticated:
+        return render(request,"account.html",context)
+    else:
+        return redirect(login_page)
+
+def logout_page(request):
+    logout(request)
+    return redirect(home_page)

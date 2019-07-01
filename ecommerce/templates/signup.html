@@ -66,7 +66,7 @@
                         <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
                       </div>
                       <div class="col-xs-3">
-                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
                       </div>
                       <div class="col-xs-3">
                         <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
@@ -80,7 +80,7 @@
 
               </div>
             </div>
-            <a href="{% url 'Account_Page' %}">{{user.username}}</a>
+            <a href="{% url 'Account_Page' %}">{{user.first_name}}</a><a href="{% url 'Logout_Page' %}">Logout</a>
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@
                         <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
                       </div>
                       <div class="col-xs-3">
-                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
                       </div>
                       <div class="col-xs-3">
                         <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
@@ -193,7 +193,7 @@
           </div>
           <div class="form-check">
             <div class="form-flex">
-              <a href="#" class="float-right"> <small>Already member? Login</small> </a>
+              <a href="{% url 'Login_Page' %}" class="float-right"> <small>Already member? Login</small> </a>
             </div>
           </div>
           <br>

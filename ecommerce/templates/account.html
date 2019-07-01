@@ -66,7 +66,7 @@
                         <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
                       </div>
                       <div class="col-xs-3">
-                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
                       </div>
                       <div class="col-xs-3">
                         <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
@@ -80,7 +80,8 @@
 
               </div>
             </div>
-            <a href="{% url 'Account_Page' %}">{{user.username}}</a>
+            <a href="{% url 'Account_Page' %}">{{user.first_name}}</a>
+            <a href="{% url 'Logout_Page' %}">Logout</a>
           </div>
         </div>
       </div>
@@ -136,7 +137,7 @@
                         <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
                       </div>
                       <div class="col-xs-3">
-                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
                       </div>
                       <div class="col-xs-3">
                         <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
@@ -157,33 +158,47 @@
       </div>
     </div>
     {% endif %}
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></a><li>
-          <li data-target="#myCarousel" data-slide-to="1"></a><li>
-          <li data-target="#myCarousel" data-slide-to="2"></a><li>
-        </ol>
-
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="{% static 'images/board-1.jpg' %}" alt="Los Angeles" style="width:100%;">
-          </div>
-
-          <div class="item">
-            <img src="{% static 'images/board-2.jpg' %}" alt="Chicago" style="width:100%;">
-          </div>
-
-          <div class="item">
-            <img src="{% static 'images/board-3.jpg' %}" alt="New york" style="width:100%;">
+    <div class="account-section">
+      <div class="container">
+        <h1>Account Settings</h1>
+        <br>
+        <h3>Personal Information <a class="edit-button"> <small>Edit</small> </a> </h3>
+        <div class="uneditable-name form-flex">
+          <form name="name-form" method="post">
+            <input type="text" class="custom-form-control" disabled value="{{user.first_name}}">
+            <input type="text" class="custom-form-control" disabled value="{{user.last_name}}"><br>
+            <h3>Gender</h3>
+            <label for="male">Male</label>
+            <input disabled type="radio" name="male" value="male">
+            <label for="female">Female</label>
+            <input disabled type="radio" name="female" value="female"><br>
+            <h3>Email</h3>
+            <input disabled type="text" diabled name="email" value="{{user.email}}" class="custom-form-control double"> <br>
+            <h3>Phone</h3>
+            <input disabled type="text" diabled name="phone" value="{{user.email}}" class="custom-form-control double"> <br> <br>
+            <input disabled type="submit" name="save" value="Save" class="btn btn-info">
+          </form>
+          <div class="order-section">
+            <h1>Orders</h1>
+            <table class="order-table">
+              <tr>
+                <th> <p>Item</p> </th>
+                <th> <p>Order Date</p> </th>
+                <th> <p>Status</p> </th>
+                <th> <p>Net Amount</p> </th>
+              </tr>
+                {% for item in order %}
+                  <tr>
+                    <tr> <small>{{item.name}}</small> </tr>
+                    <tr> <small>{{item.date}}</small> </tr>
+                    <tr> <small>{{item.status}}</small> </tr>
+                    <tr> <small>{{item.amount}}</small> </tr>
+                  </tr>
+                {% endfor %}
+            </table>
           </div>
         </div>
-        </a>
-    </div>
-    <div class="container privacy-section">
-      <h1>Return Policy</h1>
-      <br>
-      <p>We only accept return to the orders in which item delivered is damaged or the items which are wrongly delivered. The decisions regarding the return will be completely belongs to T Factory. Received Incorrect or Damaged goods? If case the box in which the item has arrived has extensive visible damage, you are requested to contact our customer support as soon as possible at <a href="mailto:info@tfactorylive.com">info@tfactorylive.com</a> . We will ask you to return the product to us and arrange a courier back. Your money will be refunded in full within 20 working days of the receipt of the product.</p>
+      </div>
     </div>
     <br><br>
     <footer>

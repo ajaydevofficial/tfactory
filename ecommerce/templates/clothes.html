@@ -66,7 +66,7 @@
                         <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
                       </div>
                       <div class="col-xs-3">
-                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
                       </div>
                       <div class="col-xs-3">
                         <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
@@ -80,7 +80,7 @@
 
               </div>
             </div>
-            <a href="{% url 'Account_Page' %}">{{user.username}}</a>
+            <a href="{% url 'Account_Page' %}">{{user.first_name}}</a><a href="{% url 'Logout_Page' %}">Logout</a>
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@
                         <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
                       </div>
                       <div class="col-xs-3">
-                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
                       </div>
                       <div class="col-xs-3">
                         <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
@@ -183,24 +183,24 @@
     <div class="container clothes-section">
       <div class="row">
           <div class="card col-md-4 text-center">
-            <img class="card-img-top" src="images/tshirtback.png" alt="Card image cap">
+            <img class="card-img-top" src="{% static 'images/tshirtback.png' %}" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">Plain T-shirts</h4>
-              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="{% url 'Soon_Page' %}" class="btn btn-primary">Buy Now</a>
             </div>
           </div>
           <div class="card col-md-4 text-center">
-            <img class="card-img-top" src="images/kurta.png" alt="Card image cap">
+            <img class="card-img-top" src="{% static 'images/kurta.png' %}" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">Kurtas(Single Use)</h4>
-              <a href="kurtastore.html" class="btn btn-primary">Buy Now</a>
+              <a href="{% url 'Kurta_Store_Page' %}" class="btn btn-primary">Buy Now</a>
             </div>
           </div>
           <div class="card col-md-4 text-center">
-            <img class="card-img-top" src="images/custom.png" alt="Card image cap">
+            <img class="card-img-top" src="{% static 'images/custom.png' %}" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">Custom T-shirts</h4>
-              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="{% url 'Soon_Page' %}" class="btn btn-primary">Buy Now</a>
             </div>
           </div>
       </div>

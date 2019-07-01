@@ -66,7 +66,7 @@
                         <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
                       </div>
                       <div class="col-xs-3">
-                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
                       </div>
                       <div class="col-xs-3">
                         <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
@@ -80,7 +80,7 @@
 
               </div>
             </div>
-            <a href="{% url 'Account_Page' %}">{{user.username}}</a>
+            <a href="{% url 'Account_Page' %}">{{user.first_name}}</a><a href="{% url 'Logout_Page' %}">Logout</a>
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@
                         <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
                       </div>
                       <div class="col-xs-3">
-                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
                       </div>
                       <div class="col-xs-3">
                         <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
@@ -189,7 +189,7 @@
             </div>
             <div class="card-body">
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="technical.html" class="btn btn-primary"><span>Explore</span></a>
+              <a href="{% url 'Technical_Page' %}" class="btn btn-primary"><span>Explore</span></a>
             </div>
           </div>
         </div>
@@ -200,7 +200,7 @@
             </div>
             <div class="card-body">
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="clothes.html" class="btn btn-primary"><span>Explore</span></a>
+              <a href="{% url 'Clothes_Page' %}" class="btn btn-primary"><span>Explore</span></a>
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@
             </div>
             <div class="card-body">
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="talent.html" class="btn btn-primary"><span>Explore</span></a>
+              <a href="{% url 'Talent_Page' %}" class="btn btn-primary"><span>Explore</span></a>
             </div>
           </div>
         </div>

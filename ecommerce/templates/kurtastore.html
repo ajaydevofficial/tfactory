@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="{% static 'css/master-responsive.css' %}">
     <link rel="stylesheet" href="{% static 'css/slider.css' %}">
     <link rel="stylesheet" href="{% static 'css/tooltip.css' %}">
+    <link rel="stylesheet" href="{% static 'css/colorpicker.css' %}">
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/slider.js' %}"></script>
+    <script src="{% static 'js/kurtaorder.js' %}"></script>
   </head>
   <body>
     {% if user.is_authenticated %}
@@ -66,7 +68,7 @@
                         <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
                       </div>
                       <div class="col-xs-3">
-                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
                       </div>
                       <div class="col-xs-3">
                         <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
@@ -80,7 +82,7 @@
 
               </div>
             </div>
-            <a href="{% url 'Account_Page' %}">{{user.username}}</a>
+            <a href="{% url 'Account_Page' %}">{{user.first_name}}</a><a href="{% url 'Logout_Page' %}">Logout</a>
           </div>
         </div>
       </div>
@@ -136,7 +138,7 @@
                         <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
                       </div>
                       <div class="col-xs-3">
-                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
                       </div>
                       <div class="col-xs-3">
                         <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
@@ -164,7 +166,7 @@
           <p>Orders will be delivered within 14 working days</p>
           <div class="flexbox">
             <div class="image-group">
-              <img src="images/satinredkurta.png" alt="">
+              <img src="{% static 'images/satinredkurta.png' %}" alt="">
             </div>
             <div class="color-group form-group">
               <label for="color"> <h4>Color ( Select only one color )</h4> </label>

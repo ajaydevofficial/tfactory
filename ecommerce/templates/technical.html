@@ -66,7 +66,7 @@
                         <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
                       </div>
                       <div class="col-xs-3">
-                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
                       </div>
                       <div class="col-xs-3">
                         <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
@@ -80,7 +80,7 @@
 
               </div>
             </div>
-            <a href="{% url 'Account_Page' %}">{{user.username}}</a>
+            <a href="{% url 'Account_Page' %}">{{user.first_name}}</a><a href="{% url 'Logout_Page' %}">Logout</a>
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@
                         <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
                       </div>
                       <div class="col-xs-3">
-                        <a class="btn btn-warning" href="{% url 'Portrait_Order_Page' %}">Portraits</a>
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
                       </div>
                       <div class="col-xs-3">
                         <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
@@ -183,27 +183,27 @@
     <div class="container clothes-section">
       <div class="row">
           <div class="card col-md-4 text-center">
-            <img class="card-img-top" src="images/projects.png" alt="Card image cap">
+            <img class="card-img-top" src="{% static 'images/projects.png' %}" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">Main/Mini Projectd</h4>
-              <a href="projectorder.html" class="btn btn-primary">Order Now</a>
+              <a href="{% url 'Project_Order_Page' %}" class="btn btn-primary">Order Now</a>
             </div>
           </div>
           <div class="card col-md-4 text-center">
-            <img class="card-img-top" src="images/dims.png" alt="Card image cap">
+            <img class="card-img-top" src="{% static 'images/dims.png' %}" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">UI/UX Designs(PSD/HTML templates)</h4>
               <div class="button-flex">
-                <a href="designorder.html" class="btn btn-primary">Order Now</a>
-                <a href="designstore.html" class="btn btn-primary">Buy Now</a>
+                <a href="{% url 'Design_Order_Page' %}" class="btn btn-primary">Order Now</a>
+                <a href="{% url 'Soon_Page' %}" class="btn btn-primary">Buy Now</a>
               </div>
             </div>
           </div>
           <div class="card col-md-4 text-center">
-            <img class="card-img-top" src="images/web.png" alt="Card image cap">
+            <img class="card-img-top" src="{% static 'images/web.png' %}" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">Full Stack Web Development</h4>
-              <a href="weborder.html" class="btn btn-primary">Order Now</a>
+              <a href="{% url 'Web_Order_Page' %}" class="btn btn-primary">Order Now</a>
             </div>
           </div>
       </div>
