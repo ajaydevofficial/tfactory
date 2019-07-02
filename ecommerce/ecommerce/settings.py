@@ -33,6 +33,7 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
 # Application definition
 
 INSTALLED_APPS = [
+    'user',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
