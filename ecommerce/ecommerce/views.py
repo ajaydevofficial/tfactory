@@ -40,11 +40,13 @@ def register_page(request):
             phone = request.POST['phone']
             email = request.POST['email']
             dob = request.POST['dob']
-            newuser = User.objects.create_user(username,email,password)
             try:
-                user_exist = user_details.objects.filter(username=username)
+                user_exist = User.objects.filter(username=username)
                 phone_exist = user_details.objects.filter(phone=phone)
                 email_exist = user_details.objects.filter(email=email)
+                print(user_exist)
+                print(email_exist)
+                print(phone_exist)
                 if user_exist:
                     return render(request,"signup.html",{'username_taken':True,'email_exist':False,'phone_exist':False})
                 elif email_exist:
@@ -55,6 +57,10 @@ def register_page(request):
                 pass
 
             try:
+                new_user = User.objects.create_user(username,email,password)
+                new_user.first_name = first_name
+                new_user.last_name = last_name
+                new_user.save()
                 user_details.objects.create(username=username,first_name=first_name,last_name=last_name,phone=phone,email=email,dob=dob)
                 return redirect(login_page)
             except Exception as ex:

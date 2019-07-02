@@ -206,11 +206,13 @@
           <div class="alert alert-danger">
             <strong>Error!</strong> Username already taken.
           </div>
-          {% elif email_exist %}
+          {% endif %}
+          {% if email_exist %}
           <div class="alert alert-danger">
             <strong>Error!</strong> Email already registered.
           </div>
-          {% elif phone_exist %}
+          {% endif %}
+          {% if phone_exist %}
           <div class="alert alert-danger">
             <strong>Error!</strong> Phone number already registered.
           </div>
