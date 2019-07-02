@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import get_user_model,authenticate,login,logout
-
+from user.models import user_details
 User = get_user_model()
 
 def login_page(request):
@@ -28,16 +28,37 @@ def home_page(request):
     return render(request,"index.html",context)
 
 def register_page(request):
-    context={}
+    context={'username_taken':False,'email_exist':False,'phone_exist':False}
     if request.user.is_authenticated:
         return redirect(home_page)
     else:
         if request.method =='POST':
             username = request.POST['username']
             password = request.POST['password']
+            first_name = request.POST['fname']
+            last_name = request.POST['lname']
+            phone = request.POST['phone']
             email = request.POST['email']
+            dob = request.POST['dob']
             newuser = User.objects.create_user(username,email,password)
-            return redirect(home_page)
+            try:
+                user_exist = user_details.objects.filter(username=username)
+                phone_exist = user_details.objects.filter(phone=phone)
+                email_exist = user_details.objects.filter(email=email)
+                if user_exist:
+                    return render(request,"signup.html",{'username_taken':True,'email_exist':False,'phone_exist':False})
+                elif email_exist:
+                    return render(request,"signup.html",{'username_taken':False,'email_exist':True,'phone_exist':False})
+                elif phone_exist:
+                    return render(request,"signup.html",{'username_taken':False,'email_exist':False,'phone_exist':True})
+            except:
+                pass
+
+            try:
+                user_details.objects.create(username=username,first_name=first_name,last_name=last_name,phone=phone,email=email,dob=dob)
+                return redirect(login_page)
+            except Exception as ex:
+                print(ex)
         return render(request,"signup.html",context)
 
 
