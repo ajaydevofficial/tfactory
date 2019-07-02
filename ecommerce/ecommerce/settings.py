@@ -24,7 +24,8 @@ SECRET_KEY = 'jy7^yx%1x2)x5d^-w#lgwlb9&fc(26$n8e@2+m*@=zv0tjpwaz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
 ALLOWED_HOSTS = ['*']
 
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 30

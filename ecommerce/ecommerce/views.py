@@ -1,22 +1,25 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import get_user_model,authenticate,login,logout
 
+
 def login_page(request):
     context = {"invalid":False}
+    User = get_user_model()
     if request.user.is_authenticated:
         return redirect(home_page)
     else:
         if request.method =='POST':
-            username = request.POST['username']
+            email = request.POST['email']
             password = request.POST['password']
+            try:
+                username = User.objects.get(email=email).username
+            except:
+                return render(request,"login.html",{"invalid":True})
             user = authenticate(username=username,password=password)
-            if not request.POST.get('remember_me', None):
-                request.session.set_expiry(0)
             if not user==None:
                 login(request,user)
                 return redirect(home_page)
             else:
-                print("Login Failed")
                 return render(request,"login.html",{"invalid":True})
         return render(request,"login.html",context)
 
@@ -26,7 +29,15 @@ def home_page(request):
 
 def register_page(request):
     context={}
-    return render(request,"signup.html",context)
+    if request.user.is_authenticated:
+        return redirect(home_page)
+    else:
+        if request.method =='POST':
+            username = request.POST['username']
+            password = request.POST['password']
+
+        return render(request,"signup.html",context)
+
 
 def soon_page(request):
     context={}
