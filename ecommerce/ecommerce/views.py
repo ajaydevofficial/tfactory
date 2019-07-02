@@ -1,10 +1,10 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import get_user_model,authenticate,login,logout
 
+User = get_user_model()
 
 def login_page(request):
     context = {"invalid":False}
-    User = get_user_model()
     if request.user.is_authenticated:
         return redirect(home_page)
     else:
@@ -35,7 +35,9 @@ def register_page(request):
         if request.method =='POST':
             username = request.POST['username']
             password = request.POST['password']
-
+            email = request.POST['email']
+            newuser = User.objects.create_user(username,email,password)
+            return redirect(home_page)
         return render(request,"signup.html",context)
 
 
