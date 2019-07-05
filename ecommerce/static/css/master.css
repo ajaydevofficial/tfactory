@@ -407,3 +407,7 @@ ul{
 .order-table th,td{
     border: 1px solid grey;
 }
+
+.form-group td{
+  border: none;
+}

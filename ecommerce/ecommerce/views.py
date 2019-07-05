@@ -44,9 +44,6 @@ def register_page(request):
                 user_exist = User.objects.filter(username=username)
                 phone_exist = user_details.objects.filter(phone=phone)
                 email_exist = user_details.objects.filter(email=email)
-                print(user_exist)
-                print(email_exist)
-                print(phone_exist)
                 if user_exist:
                     return render(request,"signup.html",{'username_taken':True,'email_exist':False,'phone_exist':False})
                 elif email_exist:
