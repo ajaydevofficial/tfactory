@@ -115,12 +115,25 @@ def terms_page(request):
     return render(request,"terms_conditions.html",context)
 
 def account_page(request):
-    context={}
+    user_phone = user_details.objects.get(username = request.user.username).phone
+    context={'valid':False,'invalid':False,'user_phone':user_phone,'user_email':request.user.email,'user_first_name':request.user.first_name,'user_last_name':request.user.last_name}
     if request.user.is_authenticated:
         try:
-            user_phone = user_details.objects.get(username = request.user.username).phone
-            context = {'user_phone':user_phone}
-            print(context)
+            if request.method =='POST':
+                first_name = request.POST['first_name']
+                last_name = request.POST['last_name']
+                phone = request.POST['phone']
+                email = request.POST['email']
+                try:
+                    user_details.objects.update(first_name=first_name,last_name=last_name,phone=phone,email=email)
+                    user_object = User.objects.filter(username= request.user.username)
+                    user_object.update(first_name=first_name,last_name=last_name,email=email)
+                    context = {'valid':True,'user_phone':phone,'user_email':email,'user_first_name':first_name,'user_last_name':last_name}
+                    return render(request,"account.html",context)
+                except Exception as ex:
+                    context = {'invalid':True,'user_phone':user_phone,'user_email':request.user.email,'user_first_name':request.user.first_name,'user_last_name':request.user.last_name}
+                    return render(request,"account.html",context)
+                    print(ex)
         except Exception as ex:
             print(ex)
 

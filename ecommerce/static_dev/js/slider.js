@@ -1,8 +1,9 @@
-//$(window).scroll(function(){
-  //if ($(this).scrollTop() > 0) {
-    //$(".header-section").css({'position':'fixed'});
-  //}
-  //else{
-    //$(".header-section").css({'position':'relative'});
-  //}
-//});
+$(document).ready(function(){
+
+  $('.edit-button').click(function(){
+    $('.account-edit').removeAttr("disabled");
+  });
+  $('#cancel-button').click(function(){
+    location.reload();
+  });
+});

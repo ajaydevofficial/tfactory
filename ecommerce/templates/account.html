@@ -164,15 +164,26 @@
         <br>
         <h3>Personal Information <a class="edit-button"> <small>Edit</small> </a> </h3>
         <div class="uneditable-name form-flex">
-          <form name="name-form" method="post">
-            <input type="text" class="custom-form-control" disabled value="{{user.first_name}}">
-            <input type="text" class="custom-form-control" disabled value="{{user.last_name}}"><br>
+          <form name="account-form" method="post">{% csrf_token %}
+            <input type="text" name="first_name" class="custom-form-control account-edit" disabled value="{{user_first_name}}">
+            <input type="text" name="last_name" class="custom-form-control account-edit" disabled value="{{user_last_name}}"><br>
             <h3>Email</h3>
-            <input disabled type="text" diabled name="email" value="{{user.email}}" class="custom-form-control double"> <br>
+            <input disabled type="text" diabled name="email" value="{{user_email}}" class="custom-form-control double account-edit"> <br>
             <h3>Phone</h3>
-            <input disabled type="text" diabled name="phone" value="{{user_phone}}" class="custom-form-control double"> <br> <br>
-            <input disabled type="submit" name="save" value="Save" class="btn btn-info">
-          </form>
+            <input disabled type="text" diabled name="phone" value="{{user_phone}}" class="custom-form-control double account-edit"> <br> <br>
+            <input disabled type="submit" name="save" value="Save" class="btn btn-info account-edit">
+            <input disabled type="submit" name="save" value="Cancel" class="btn btn-danger account-edit" id="cancel-button">
+          </form><br>
+          {% if valid %}
+          <div class="alert alert-success">
+            <strong>Success!</strong>Details Successfullly Updated.
+          </div>
+          {% endif %}
+          {% if invalid %}
+          <div class="alert alert-danger">
+            <strong>Error!</strong> Update Unsuccessfull.
+          </div>
+          {% endif %}
           <div class="order-section">
             <h1>Orders</h1>
             <table class="order-table">
