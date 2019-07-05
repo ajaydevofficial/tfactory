@@ -167,15 +167,10 @@
           <form name="name-form" method="post">
             <input type="text" class="custom-form-control" disabled value="{{user.first_name}}">
             <input type="text" class="custom-form-control" disabled value="{{user.last_name}}"><br>
-            <h3>Gender</h3>
-            <label for="male">Male</label>
-            <input disabled type="radio" name="male" value="male">
-            <label for="female">Female</label>
-            <input disabled type="radio" name="female" value="female"><br>
             <h3>Email</h3>
             <input disabled type="text" diabled name="email" value="{{user.email}}" class="custom-form-control double"> <br>
             <h3>Phone</h3>
-            <input disabled type="text" diabled name="phone" value="{{user.email}}" class="custom-form-control double"> <br> <br>
+            <input disabled type="text" diabled name="phone" value="{{user_phone}}" class="custom-form-control double"> <br> <br>
             <input disabled type="submit" name="save" value="Save" class="btn btn-info">
           </form>
           <div class="order-section">

@@ -117,6 +117,13 @@ def terms_page(request):
 def account_page(request):
     context={}
     if request.user.is_authenticated:
+        try:
+            user_phone = user_details.objects.get(username = request.user.username).phone
+            context = {'user_phone':user_phone}
+            print(context)
+        except Exception as ex:
+            print(ex)
+
         return render(request,"account.html",context)
     else:
         return redirect(login_page)
