@@ -396,6 +396,7 @@ ul{
 .order-table{
   width:100%;
   border-collapse: collapse;
+  border-radius: 5px 5px 0 0;
 }
 .order-table th{
     background-color: #1e1e1e;
@@ -404,7 +405,7 @@ ul{
 .order-table th p,.order-table th small{
   margin: 10px;
 }
-.order-table th,td{
+.order-table th,.order-table td{
     border: 1px solid grey;
 }
 
@@ -415,6 +416,17 @@ ul{
   padding-top: 75px;
 }
 .edit-button{
-    color:skyblue;
+    color:skyblue !important;
     cursor: pointer;
+}
+#cell-start{
+  border-radius: 5px 0 0 0;
+  border: none;
+  border-right:1px solid grey;
+  border-bottom:1px solid grey;
+}
+#cell-end{
+  border-radius: 0 5px 0 0;
+  border: none;
+  border-bottom:1px solid grey;
 }
