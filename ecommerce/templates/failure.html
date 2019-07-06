@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>T Factory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <link rel="stylesheet" href="{% static 'css/master-responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tooltip.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/slider.js' %}"></script>
+  </head>
+  <body>
+    {% if user.is_authenticated %}
+    <div class="header-section">
+      <div class="container">
+        <div class="header-inner-section">
+          <div class="header-content">
+            <a href="{% url 'Home_Page' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+          </div>
+          <div class="right-header">
+            <a id="popup" data-toggle="modal" data-target="#myModal">Category</a>
+            <div id="myModal" class="modal gradient-box" role="dialog" >
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <h4>Technical Factory</h4>
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Project_Order_Page' %}">Projects</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">UI/UX</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Web_Order_Page' %}">Websites</a>
+                      </div>
+                    </div>
+                    <h4>Togs Factory</h4>
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Plain Tshirts</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Kurta_Store_Page' %}">Kurtas</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Custom Tshirts</a>
+                      </div>
+                    </div>
+                    <h4>Talent Factory</h4>
+                    <div class="row custom-row">
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Logo</a>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <a href="{% url 'Account_Page' %}">{{user.first_name}}</a><a href="{% url 'Logout_Page' %}">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="header-section">
+      <div class="container">
+        <div class="header-inner-section">
+          <div class="header-content">
+            <a href="{% url 'Home_Page' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+          </div>
+          <div class="right-header">
+            <a id="popup" data-toggle="modal" data-target="#myModal">Category</a>
+            <div id="myModal" class="modal gradient-box" role="dialog" >
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <h4>Technical Factory</h4>
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Project_Order_Page' %}">Projects</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">UI/UX</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Web_Order_Page' %}">Websites</a>
+                      </div>
+                    </div>
+                    <h4>Togs Factory</h4>
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Plain Tshirts</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Kurta_Store_Page' %}">Kurtas</a>
+                      </div>
+                      <div class="col-xs-4">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Custom Tshirts</a>
+                      </div>
+                    </div>
+                    <h4>Talent Factory</h4>
+                    <div class="row custom-row">
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Logo</a>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Design_Order_Page' %}">Prints</a>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Portraits</a>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-warning" href="{% url 'Soon_Page' %}">Gifts</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <a href="{% url 'Login_Page' %}">Login</a>
+            <a href="{% url 'Account_Page' %}">Account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <div class="container status-section">
+      <div class="container">
+        <h1>Oops! Order Failed</h1>
+        <br>
+        <p>Payment cannot be completed</p>
+      </div>
+    </div>
+    <br><br>
+    <footer>
+      <div class="footer-section">
+      <div class="container">
+        <div class="custom-container width-60" id="left-footer">
+          <ul id="help">
+            <h4>Help</h4>
+            <li><a href="#">Payments</a><li>
+            <li><a href="#">F.A.Q</a><li>
+            <li><a href="#">Cancellation & Returns</a><li>
+            <li><a href="#">Report Issues</a><li>
+          </ul>
+          <ul id="policy">
+            <h4>Policy</h4>
+            <li><a href="{% url 'Return_Page' %}">Return Policy</a><li>
+            <li><a href="{% url 'Terms_Page' %}">Terms & Conditions</a><li>
+            <li><a href="#">Security</a><li>
+            <li><a href="{% url 'Privacy_Page' %}">Privacy</a><li>
+          </ul>
+          <ul id="social">
+            <h4>Social</h4>
+            <li><a href="#">Facebook</a><li>
+            <li><a href="#">Instagram</a><li>
+            <li><a href="#">LinkedIn</a><li>
+          </ul>
+        </div>
+        <div class="custom-container width-40">
+          <ul id="contact">
+            <h4>Contact Us</h4>
+            <li><a href="mailto:info@tfactorylive.com">info@tfactorylive.com</a></li>
+            <li><a href="tel:+919567283023">+919567283023</a><li>
+            <li><a href="tel:+919567283023">+919567283023</a><li>
+            <li><a href="tel:+919567283023">+919567283023</a><li>
+          </ul>
+          <ul id="place">
+            <h4>Our Place</h4>
+            <li><a href="https://maps.google.com/?q=Kochi,Kerala,India">Kochi,Kerala,India</a><li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </footer>
+    <footer id="footer"><p>Copyright &copy; 2019 T Factory All Rights Reserved.</p> </footer>
+  </body>
+</html>

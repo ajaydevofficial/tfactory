@@ -114,6 +114,14 @@ def terms_page(request):
     context={}
     return render(request,"terms_conditions.html",context)
 
+def success_page(request):
+    context={}
+    return render(request,"success.html",context)
+
+def failure_page(request):
+    context={}
+    return render(request,"failure.html",context)
+
 def account_page(request):
     user_phone = user_details.objects.get(username = request.user.username).phone
     context={'valid':False,'invalid':False,'user_phone':user_phone,'user_email':request.user.email,'user_first_name':request.user.first_name,'user_last_name':request.user.last_name}

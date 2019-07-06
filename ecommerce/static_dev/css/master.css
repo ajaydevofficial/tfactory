@@ -430,3 +430,9 @@ ul{
   border: none;
   border-bottom:1px solid grey;
 }
+.status-section{
+  padding-top: 100px;
+}
+.status-section .container{
+  margin-top: 0;
+}
