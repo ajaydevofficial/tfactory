@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=C:\Users\AJAYDE~1\tfactory\tfactory"
+set "VIRTUAL_ENV=C:\Users\AJAYDE~1\tfactory\ECOMME~1\virtual"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
@@ -13,7 +13,7 @@ if defined _OLD_VIRTUAL_PROMPT (
     )
 )
 if not defined VIRTUAL_ENV_DISABLE_PROMPT (
-    set "PROMPT=(tfactory) %PROMPT%"
+    set "PROMPT=(virtual) %PROMPT%"
 )
 
 REM Don't use () to avoid problems with them in %PATH%
