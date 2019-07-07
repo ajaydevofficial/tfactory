@@ -1,6 +1,15 @@
+from django.shortcuts import render, render_to_response
+from django.http import HttpResponse,HttpResponseRedirect
+from django.template.loader import get_template
+from django.template import Context, Template,RequestContext
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.shortcuts import render,redirect
 from django.contrib.auth import get_user_model,authenticate,login,logout
 from user.models import user_details
+import datetime
+import hashlib
+from random import randint
+
 User = get_user_model()
 
 def login_page(request):
@@ -102,9 +111,6 @@ def portrait_order_page(request):
     context={}
     return render(request,"portraitorder.html",context)
 
-def kurta_store_page(request):
-    context={}
-    return render(request,"kurtastore.html",context)
 
 def web_order_page(request):
     context={}
@@ -148,6 +154,12 @@ def account_page(request):
         return render(request,"account.html",context)
     else:
         return redirect(login_page)
+
+def kurta_store_page(request):
+    context={}
+    if request.method=='POST':
+        
+    return render(request,"kurtastore.html",context)
 
 def logout_page(request):
     logout(request)

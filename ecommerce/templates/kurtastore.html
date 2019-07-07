@@ -161,7 +161,7 @@
     {% endif %}
     <div class="kurta-section">
       <div class="container">
-        <form class="kurta-form" method="post">
+        <form class="kurta-form" method="post">{% csrf_token %}
           <h1>Place Order</h1>
           <p>Orders will be delivered within 14 working days</p>
           <div class="flexbox">
@@ -216,8 +216,8 @@
               </div><br>
               <div class="form-group address-area">
                 <h4>Contact (For Confirmation)</h4>
-                <input required class="form-control"type="text" name="address1" placeholder="email">
-                <input required class="form-control"type="text" name="address2" placeholder="phone">
+                <input required class="form-control"type="email" name="email" placeholder="email">
+                <input required class="form-control"type="number" name="phone" placeholder="phone">
               </div>
               <div class="form-group">
                 <table>
