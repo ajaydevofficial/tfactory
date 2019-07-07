@@ -130,7 +130,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 #Payment Gateway Details
-
 PAYU_MERCHANT_KEY = ''
 PAYU_KEY = ''
 PAYU_SALT = ''
@@ -139,10 +138,11 @@ PAYU_AUTH_HEADER = ''
 PAYU_SUCCESS_URL = 'http://127.0.0.1:8000/success/'
 PAYU_FAILURE_URL = 'http://127.0.0.1:8000/failure/'
 
-"""PAYU_MERCHANT_KEY = 'E9jUqX8v'
+"""
+PAYU_MERCHANT_KEY = 'E9jUqX8v'
 PAYU_KEY = 'E9jUqX8v'
 PAYU_SALT = 'vLnHGFL0jo'
-PAYMENT_MODE = 'TEST'
+PAYMENT_MODE = 'LIVE'
 PAYU_AUTH_HEADER = 'JNnnLe8ET7eV6AJAk02tFW1Jls/QxY09l/n2m7Nrj+E='
 PAYU_SUCCESS_URL = 'http://127.0.0.1:8000/success/'
 PAYU_FAILURE_URL = 'http://127.0.0.1:8000/failure/'"""

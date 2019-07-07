@@ -16,11 +16,11 @@ $(document).ready(function(){
     $('#ordercolor').val(colorhex);
   });
   $('.size-value').change(function(){
-    var total = parseInt($('input[name="small"]').val()) +
-                parseInt($('input[name="medium"]').val()) +
-                parseInt($('input[name="large"]').val()) +
-                parseInt($('input[name="xlarge"]').val()) +
-                parseInt($('input[name="xxlarge"]').val());
+    var total = parseInt($('input[name="udf1"]').val()) +
+                parseInt($('input[name="udf2"]').val()) +
+                parseInt($('input[name="udf3"]').val()) +
+                parseInt($('input[name="udf4"]').val()) +
+                parseInt($('input[name="udf5"]').val());
     var ordertotal = total*230 + 500;
     $("#orderno").html(total);
     $(".size-total-value").val(total);

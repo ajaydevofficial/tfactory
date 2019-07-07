@@ -35,10 +35,10 @@
       <br/>
       {% endif %}
 
-      <form action="{{ posted.action }}" method="post" name="payuForm"> {% csrf_token %}
+      <form action="{{ action }}" method="post" name="payuForm"> {% csrf_token %}
         <input type="text" name="key" value="{{posted.key}}" />
-        <input type="text" name="hash_string" value="{{ posted.hash_string }}" />
-        <input type="text" name="hash" value="{{ posted.hashh }}"/>
+        <input type="text" name="hash_string" value="{{ hash_string }}" />
+        <input type="text" name="hash" value="{{ hashh }}"/>
         <input type="text" name="posted" value="{{ posted }}"/>
         <input type="text" name="txnid" value="{{ posted.txnid }}" />
       <table>
@@ -120,7 +120,7 @@
         </tr>
         <tr>
           <td>Color: </td>
-          <td><input name="udf5" value="{{ posted.color }}" /></td>
+          <td><input name="udf6" value="{{ posted.udf6 }}" /></td>
         </tr>
 
      <td colspan="4"><input type="submit" value="Submit" /></td>
