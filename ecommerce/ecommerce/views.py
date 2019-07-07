@@ -179,11 +179,12 @@ def kurta_store_page(request):
 				'udf2': request.POST['medium'],
 	 			'udf3': request.POST['large'],
 	 			'udf4': request.POST['xlarge'],
-	 			'udf5': request.POST['xxlarge']
+	 			'udf5': request.POST['xxlarge'],
+                'color': request.POST['color']
 	 	}
         payu_data = payu.initate_transaction(payment_data)
         request.session['payu_data'] = payu_data
-        return redirect(kurta_store_page)
+        return redirect(kurta_checkout_page)
     return render(request,"kurtastore.html",context)
 
 def logout_page(request):
@@ -195,6 +196,6 @@ def kurta_checkout_page(request):
     if request.session['payu_data'] == None:
         context={}
     else:
-        context =  request.session['payu_data']
+        context = {'posted': request.session['payu_data']}
         print(context)
     return render(request,'kurta_checkout_page.html',context)

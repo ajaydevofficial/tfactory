@@ -1,5 +1,16 @@
 <html>
-  <head onload="submitPayuForm()">
+  <head onload="submitPayuForm()">{% load static %}
+    <title>Loading</title>
+    <link rel="stylesheet" href="/css/master.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <link rel="stylesheet" href="{% static 'css/master-responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tooltip.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/slider.js' %}"></script>
   <script type="text/javascript">
     var hash = "{{ hashh }}";
     function submitPayuForm() {
@@ -12,8 +23,10 @@
   </script>
   </head>
   <body style="display:flex;">
-    <div class="gif" style="margin:auto;">
-
+    <div class="gif" style="margin:auto;text-align:center">
+      <h4>Please do not refresh or close this page</h4>
+      <small>You will be redirected automatically</small><br>
+      <img height="200px" width="200px" src="{% static 'images/spinner-loading.svg' %}" alt="loading">
     </div>
     <br/>
     {% if error %}
@@ -22,13 +35,13 @@
       <br/>
       {% endif %}
 
-      <form action={{ posted.action }} method="post" name="payuForm">
-        <input type="hidden" name="key" value="{{posted.key}}" />
-        <input type="hidden" name="hash_string" value="{{ posted.hash_string }}" />
-        <input type="hidden" name="hash" value="{{ posted.hashh }}"/>
-        <input type="hidden" name="posted" value="{{ posted }}"/>
-        <input type="hidden" name="txnid" value="{{ posted.txnid }}" />
-      <table hidden>
+      <form action="{{ posted.action }}" method="post" name="payuForm"> {% csrf_token %}
+        <input type="text" name="key" value="{{posted.key}}" />
+        <input type="text" name="hash_string" value="{{ posted.hash_string }}" />
+        <input type="text" name="hash" value="{{ posted.hashh }}"/>
+        <input type="text" name="posted" value="{{ posted }}"/>
+        <input type="text" name="txnid" value="{{ posted.txnid }}" />
+      <table>
         <tr>
           <td><b>Mandatory Parameters</b></td>
         </tr>
@@ -105,11 +118,13 @@
           <td>UDF5: </td>
           <td><input name="udf5" value="{{ posted.udf5 }}" /></td>
         </tr>
+        <tr>
+          <td>Color: </td>
+          <td><input name="udf5" value="{{ posted.color }}" /></td>
+        </tr>
 
      <td colspan="4"><input type="submit" value="Submit" /></td>
 
-
-        </tr>
       </table>
     </form>
   </body>
