@@ -34,6 +34,7 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
 
 INSTALLED_APPS = [
     'user',
+    'paywix',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -128,6 +129,8 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
+#Payment Gateway Details
+
 PAYU_MERCHANT_KEY = ''
 PAYU_KEY = ''
 PAYU_SALT = ''
@@ -135,7 +138,7 @@ PAYMENT_MODE = 'TEST'
 PAYU_AUTH_HEADER = ''
 PAYU_SUCCESS_URL = 'http://127.0.0.1:8000/success/'
 PAYU_FAILURE_URL = 'http://127.0.0.1:8000/failure/'
-#Payment gateway
+
 """PAYU_MERCHANT_KEY = 'E9jUqX8v'
 PAYU_KEY = 'E9jUqX8v'
 PAYU_SALT = 'vLnHGFL0jo'

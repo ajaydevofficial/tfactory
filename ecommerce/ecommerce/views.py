@@ -1,5 +1,5 @@
 from django.shortcuts import render, render_to_response
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse,HttpResponseRedirect,JsonResponse
 from django.template.loader import get_template
 from django.template import Context, Template,RequestContext
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
@@ -9,6 +9,7 @@ from user.models import user_details
 import datetime
 import hashlib
 from random import randint
+from paywix.payu import PAYU
 
 User = get_user_model()
 
@@ -157,10 +158,43 @@ def account_page(request):
 
 def kurta_store_page(request):
     context={}
+    payu = PAYU()
+    hash_object = hashlib.sha256(b'randint(0,20)')
+    txnid = hash_object.hexdigest()[0:20]
+    payment_data = {}
     if request.method=='POST':
-        
+        payment_data = {
+				'txnid': txnid,
+	 			'amount': request.POST['ordertotal'],
+	 			'firstname': request.POST['firstname'] ,
+	 			'email': request.POST['email'],
+	 			'phone': request.POST['phone'],
+	 			'productinfo': 'kurta',
+	 			'address1': request.POST['address1'],
+	 			'address2': request.POST['address2'],
+	 			'city': request.POST['city'],
+	 			'state': request.POST['state'],
+	 			'zipcode': request.POST['pincode'],
+                'udf1': request.POST['small'],
+				'udf2': request.POST['medium'],
+	 			'udf3': request.POST['large'],
+	 			'udf4': request.POST['xlarge'],
+	 			'udf5': request.POST['xxlarge']
+	 	}
+        payu_data = payu.initate_transaction(payment_data)
+        request.session['payu_data'] = payu_data
+        return redirect(kurta_store_page)
     return render(request,"kurtastore.html",context)
 
 def logout_page(request):
     logout(request)
     return redirect(home_page)
+
+def kurta_checkout_page(request):
+
+    if request.session['payu_data'] == None:
+        context={}
+    else:
+        context =  request.session['payu_data']
+        print(context)
+    return render(request,'kurta_checkout_page.html',context)

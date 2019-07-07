@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import home_page,login_page,register_page,soon_page,talent_page,technical_page,clothes_page,design_order_page,account_page,success_page
+from .views import home_page,login_page,register_page,soon_page,talent_page,technical_page,clothes_page,design_order_page,account_page,success_page,kurta_checkout_page
 from .views import privacy_page,return_page,project_order_page,portrait_order_page,kurta_store_page,web_order_page,terms_page,logout_page,failure_page
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -39,5 +39,5 @@ urlpatterns = [
     path('logout/',logout_page,name="Logout_Page"),
     path('success/',success_page,name="Success_Page"),
     path('failure/',failure_page,name="Failure_Page"),
-
+    path('kurta_checkout/',kurta_checkout_page,name="Kurta_Checkout_Page"),
 ]
