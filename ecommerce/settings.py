@@ -34,7 +34,6 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
 
 INSTALLED_APPS = [
     'user',
-    'paywix',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
