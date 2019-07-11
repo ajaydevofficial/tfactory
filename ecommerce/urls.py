@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import home_page,login_page,register_page,soon_page,talent_page,technical_page,clothes_page,design_order_page,account_page,success_page,kurta_checkout_page
-from .views import privacy_page,return_page,project_order_page,portrait_order_page,kurta_store_page,web_order_page,terms_page,logout_page,failure_page
+from .views import privacy_page,return_page,project_order_page,portrait_order_page,kurta_store_page,web_order_page,terms_page,logout_page,failure_page,faq_page,payments_page,cancelation_page,report_page,security_page
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home_page,name="Home_Page"),
@@ -40,4 +40,9 @@ urlpatterns = [
     path('success/',success_page,name="Success_Page"),
     path('failure/',failure_page,name="Failure_Page"),
     path('kurta_checkout/',kurta_checkout_page,name="Kurta_Checkout_Page"),
+    path('faq/',faq_page,name="Faq_Page"),
+    path('payments/',payments_page,name="Payments_Page"),
+    path('cancelation/',cancelation_page,name="Cancelation_Page"),
+    path('report/',report_page,name="Report_Page"),
+    path('security/',security_page,name="Security_Page"),
 ]

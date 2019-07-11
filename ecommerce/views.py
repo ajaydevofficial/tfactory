@@ -10,7 +10,6 @@ import datetime
 import hashlib
 from random import randint
 from paywix.payu import PAYU
-from payu.gateway import get_hash
 from uuid import uuid4
 
 User = get_user_model()
@@ -214,7 +213,23 @@ def kurta_checkout_page(request):
         print(context)
     return render(request,'kurta_checkout_page.html',context)
 
+def faq_page(request):
+    context={}
+    return render(request,"faq.html",context)
 
+def payments_page(request):
+    context={}
+    return render(request,"payments.html",context)
+
+def cancelation_page(request):
+    context={}
+    return render(request,"cancelation.html",context)  
+def report_page(request):
+    context={}
+    return render(request,"report.html",context)   
+def security_page(request):
+    context={}
+    return render(request,"security.html",context)         
 #payment_data = {
 #		'txnid': txnid,
 #		'amount': request.POST['ordertotal'],
@@ -238,3 +253,5 @@ def kurta_checkout_page(request):
 #payu_data['action'] = 'https://test.payu.in/_payment'
 #request.session['payu_data'] = payu_data
 #return redirect(kurta_checkout_page)
+
+

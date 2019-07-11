@@ -212,16 +212,16 @@
         <div class="custom-container width-60" id="left-footer">
           <ul id="help">
             <h4>Help</h4>
-            <li><a href="#">Payments</a><li>
-            <li><a href="#">F.A.Q</a><li>
-            <li><a href="#">Cancellation & Returns</a><li>
-            <li><a href="#">Report Issues</a><li>
+            <li><a href="{% url 'Payments_Page' %}">Payments</a><li>
+            <li><a href="{% url 'Faq_Page' %}">F.A.Q</a><li>
+            <li><a href="{% url 'Cancelation_Page' %}">Cancellation & Returns</a><li>
+            <li><a href="{% url 'Report_Page' %}">Report Issues</a><li>
           </ul>
           <ul id="policy">
             <h4>Policy</h4>
             <li><a href="{% url 'Return_Page' %}">Return Policy</a><li>
             <li><a href="{% url 'Terms_Page' %}">Terms & Conditions</a><li>
-            <li><a href="#">Security</a><li>
+            <li><a href="{% url 'Security_Page' %}">Security</a><li>
             <li><a href="{% url 'Privacy_Page' %}">Privacy</a><li>
           </ul>
           <ul id="social">
