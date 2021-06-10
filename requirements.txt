@@ -1,4 +1,4 @@
-Django==2.2.2
+Django==2.2.24
 payu-biz==2.0
 paywix==2.1
 pytz==2019.1
